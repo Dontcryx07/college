@@ -1,0 +1,60 @@
+# Redrob Hackathon — Submission Metadata
+# This file mirrors the portal metadata and is verified at Stage 3 review.
+
+team_name: "aarav"
+
+primary_contact:
+  name: "Aarav"
+  email: "aarav@example.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Aarav"
+    email: "aarav@example.com"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/USERNAME/redrob-ranker"
+
+sandbox_link: "https://huggingface.co/spaces/USERNAME/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./dataset/candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local Windows PC"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+  - "GitHub Copilot"
+
+ai_usage_summary: |
+  Used Claude for architecture discussion, code review, and reasoning generation
+  design. Used GitHub Copilot for autocomplete during development.
+
+methodology_summary: |
+  Tier-lexicographic evidence-first ranker with four scoring subsystems:
+  (1) evidence scorer — ontology phrase matching against career descriptions
+  (never the skills list), collapsing ~44 unique templates via memoization;
+  (2) JD-fit scorer — experience band, location tier, notice period, product vs.
+  consulting background, tenure stability, ML depth, skill assessment trust;
+  (3) behavioral multiplier — recency, recruiter response rate, open-to-work
+  status, interview completion rate combined into a narrow [0.6, 1.1] multiplier;
+  (4) trap detector — honeypot exclusion (YoE inflation, phantom expert skills)
+  and keyword-stuffer soft penalty.
+  Final score = evidence_tier + squash(within_tier_score), where evidence_tier
+  dominates ordering so no amount of JD-fit or behavior can push a Tier-3
+  candidate above a Tier-4. Runs in ~20s on CPU for 100K candidates.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
