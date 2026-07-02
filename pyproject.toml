@@ -5,4 +5,4 @@ description = "Redrob candidate ranking pipeline — Vercel deployment"
 requires-python = ">=3.10"
 
 [tool.vercel]
-entrypoint = "api/index.py"
+entrypoint = "asgi.py"
