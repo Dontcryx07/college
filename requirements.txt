@@ -1,0 +1,6 @@
+# No runtime dependencies for rank.py / pipeline/ on purpose (stdlib only:
+# json, gzip, csv, re, math, dataclasses) — one less thing to break in the
+# grading sandbox. Requires Python 3.10+.
+#
+# Dev / test only:
+pytest==8.3.4
