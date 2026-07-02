@@ -1,0 +1,8 @@
+[project]
+name = "candidate-ranker"
+version = "1.1.0"
+description = "Redrob candidate ranking pipeline — Vercel deployment"
+requires-python = ">=3.10"
+
+[tool.vercel]
+entrypoint = "api/index.py"

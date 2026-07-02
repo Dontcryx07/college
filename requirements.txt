@@ -1,6 +1,9 @@
-# No runtime dependencies for rank.py / pipeline/ on purpose (stdlib only:
-# json, gzip, csv, re, math, dataclasses) — one less thing to break in the
-# grading sandbox. Requires Python 3.10+.
+# Core pipeline (stdlib only: json, gzip, csv, re, math, dataclasses).
+# Requires Python 3.10+.
+#
+# Vercel deployment:
+fastapi>=0.115.0
+python-multipart>=0.0.18
 #
 # Dev / test only:
 pytest==8.3.4
