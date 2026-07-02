@@ -68,7 +68,7 @@ Evidence tier (0–5) **dominates** ordering — no amount of location/notice/be
 
 ## Sandbox
 
-A Streamlit sandbox is available at `sandbox/app.py`:
+A Streamlit sandbox is available at `https://college-hp6yepr2hgh7iytw75bkjb.streamlit.app/`:
 
 ```bash
 pip install streamlit
